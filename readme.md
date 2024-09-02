@@ -4,8 +4,8 @@ This repository contians a reproduction for an issue encountered when trying to 
 
 In short,
 
-- ./src/setup.ts contains a scripts that creates a two agents with a group AID using the main branch of signify-ts.
-- ./src/connect.ts contains a script that connects to the keria instance using the signify-ts branch of https://github.com/WebOfTrust/signify-ts/pull/267
+- ./src/setup.ts contains a scripts that creates a two agents with a group AID using an older version of signify-ts
+- ./src/connect.ts contains a script that connects to the keria instance using the main branch of signify-ts
 - ./migrate.sh contains a shell script to run as part of the migration to the new keria version
 
 The run-test.sh file contains the reproduction script that:
