@@ -6,7 +6,7 @@ In short,
 
 - ./src/setup.ts contains a scripts that creates a two agents with a group AID using an older version of signify-ts
 - ./src/connect.ts contains a script that connects to the keria instance using the main branch of signify-ts
-- ./migrate.sh contains a shell script to run as part of the migration to the new keria version
+- ./run-test.sh contains a shell script that runs the whole migration test.
 
 The run-test.sh file contains the reproduction script that:
 
@@ -14,6 +14,7 @@ The run-test.sh file contains the reproduction script that:
 - Runs the setup.ts script
 - Stops the keria instance
 - Runs keripy database migrations
+- Runs keria sig-fix
 - Starts a keria intance with version 0.2.0-devX
 - Runs the connect.ts script
 
