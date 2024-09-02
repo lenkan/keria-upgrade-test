@@ -1,4 +1,4 @@
-import { Algos, d, messagize, Operation, randomPasscode, ready, Siger, SignifyClient, Tier } from "signify-ts";
+import { Algos, d, messagize, Operation, randomPasscode, ready, Siger, SignifyClient, Tier } from "signify-ts-old";
 import { setTimeout } from "node:timers/promises";
 
 export interface CreateWalletOptions {

@@ -1,4 +1,4 @@
-import { SignifyClient, Tier, ready } from "signify-ts";
+import { SignifyClient, Tier, ready } from "signify-ts-next";
 
 const KERIA_HOSTNAME = process.env.KERIA_HOSTNAME ?? "localhost";
 const AGENT_URL = `http://${KERIA_HOSTNAME}:3901`;

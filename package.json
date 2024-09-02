@@ -1,0 +1,9 @@
+{
+    "type": "module",
+    "dependencies": {
+        "@types/node": "^20.14.9",
+        "signify-ts-old": "github:weboftrust/signify-ts#304b0ee3a3274a6c913d9e15025c6281ff08eb82",
+        "signify-ts-next": "github:weboftrust/signify-ts#main",
+        "tsx": "^4.15.7"
+    }
+}

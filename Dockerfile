@@ -5,7 +5,7 @@ COPY package.json package-lock.json ./
 
 RUN npm ci
 
-COPY . .
+COPY src ./src
 
-CMD [ "npm", "start" ]
+ENTRYPOINT [ "npx", "tsx" ]
 

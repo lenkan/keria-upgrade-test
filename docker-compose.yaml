@@ -3,7 +3,7 @@ volumes:
 
 services:
   keria:
-    image: weboftrust/keria:${KERIA_IMAGE_TAG:-0.1.2}
+    image: ${KERIA_IMAGE_REPO:-weboftrust/keria}:${KERIA_IMAGE_TAG:-0.1.4-dev0}
     environment:
       - KERI_AGENT_CORS=1
       - KERI_URL=http://keria:3902
@@ -11,7 +11,6 @@ services:
       - PYTHONIOENCODING=UTF-8
     volumes:
       - ./config/keria.json:/usr/local/var/keri/cf/keria.json
-      - ./migrate.sh:/keria/migrate.sh
       - keria:/usr/local/var/keri
     entrypoint: keria
     command: [start, --config-file, keria, --name, agent]
@@ -26,19 +25,8 @@ services:
       - 3902:3902
       - 3903:3903
 
-  setup:
-    build: ./scripts-setup
-    depends_on:
-      keria:
-        condition: service_healthy
-    environment:
-      - KERIA_HOSTNAME=keria
-      - PASSCODE1=Az_WvJVeSEJodnUAfXb4B
-      - PASSCODE2=B3j3xuGD-Sso-uJ-3XiFo
-      - PASSCODE3=CsTbLFEAme4Ozny7n-NlI
-
-  connect:
-    build: ./scripts-connect
+  client:
+    build: .
     depends_on:
       keria:
         condition: service_healthy
